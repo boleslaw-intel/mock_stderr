@@ -7,8 +7,12 @@ import (
 
 func main() {
 	// Define the text to be printed to stderr
-	text := "Error updating the Git index:"
+	text1 := "Error updating the Git index:"
+	text2 := "jakis blad"
+
+	// Print the text to stdout using fmt.Fprintf
+	fmt.Fprintf(os.Stdout, "%s\n", text1)
 
 	// Print the text to stderr using fmt.Fprintf
-	fmt.Fprintf(os.Stderr, "%s\n", text)
+	fmt.Fprintf(os.Stderr, "%s\n", text2)
 }
