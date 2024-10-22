@@ -7,6 +7,10 @@ import (
 	"time"
 )
 
+// TODO:
+//	1. dodaj opcje --always-fail,  ktora zastapi random success/fail
+//  2. dodaj parametr --cmd, ktory zostanie przekazany do cmd.Run() w przypadku 'success case'
+
 func main() {
 
 	failStdoutMsg := "jakis tekst w stdout"
@@ -24,5 +28,6 @@ func main() {
 
 	} else {
 		fmt.Println(successMsg)
+		//wywolaj oryuginalny cmd call jako argument
 	}
 }
