@@ -13,8 +13,8 @@ import (
 
 func main() {
 
-	failStdoutMsg := "some non-error text in stdout"
-	failStderrMsg := []string{"Error updating the Git index:", "Some error but not critical", "Error 123"}
+	failStdoutMsg := []string{"some non-error text in stdout", "STDouT"}
+	failStderrMsg := []string{"Error updating the Git index:", "Some error but not critical", "Error 123", "without err or keyword"}
 
 	successMsg := "Files pulled successfully."
 
@@ -23,7 +23,7 @@ func main() {
 
 	// Randomly decide whether to print an error or success message
 	if rand.Intn(2) == 0 {
-		fmt.Fprintf(os.Stdout, "%s\n", failStdoutMsg)
+		fmt.Fprintf(os.Stdout, "%s\n", failStdoutMsg[rand.Intn(len(failStdoutMsg))])
 		fmt.Fprintf(os.Stderr, "%s\n", failStderrMsg[rand.Intn(len(failStderrMsg))])
 
 	} else {
